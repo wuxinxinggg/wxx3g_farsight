@@ -1,0 +1,497 @@
+1207期嵌入式LINUX就业班C语言预科课程测验
+ 
+
+ 一 单选题
+ 
+ 1.要把高级语言编写的源程序转换为目标程序,需要使用(  )[2分]
+
+ A编辑程序
+
+ B驱动程序
+
+ C诊断程序
+
+ D编译程序
+
+我的答案：D
+
+2.以下叙述中正确的是(  )[2分]
+
+ A C语言程序将从源程序中第一个函数开始执行
+
+ B 可以在程序中由用户指定任意一个函数作为主函数，程序将从此开始执行
+
+ C C语言规定必须用main作为主函数名，程序将从此开始执行，在此结束
+
+ D main可作为用户标识符，用以命名任意一个函数作为主函数
+
+我的答案：C
+
+3.若变量a是int类型，并执行了语句：a=‘A'+1.6；，则正确的叙述是 (  )[2分]
+
+ A 不允许字符型和浮点型相加
+
+ B a的值是字符‘A’的ASCII值加上2
+
+ C a的值是字符B
+
+ D a的值是浮点型
+
+我的答案：C
+
+4.若变量已正确定义并赋值，以下符合C语言语法的表达式是(  )[2分]
+
+ Aa=a+7=c+b
+
+ Ba:=b+1
+
+ Ca=b=c+2
+
+ Dint 18.5%3
+
+我的答案：C
+
+5.下列可用于C语言用户标识符的一组是(  )[2分]
+
+ Aa3_b3, _123,car
+
+ BFor, -abc, IF Case
+
+ C2a, DO, sizeof
+
+ Dvoid, define, WORD
+
+我的答案：A
+
+6.若在定义语句：int a,b,c,*p=&c;之后，接着执行以下选项中的语句，则能正确执行的语句是(   )[2分]
+
+ A scanf("%d",&p);
+
+ Bscanf("%d",a,b,c);
+
+ Cscanf("%d%d%d",a,b,c);
+
+ Dscanf("%d",p);
+
+我的答案：D
+
+7.以下关于long、int和short类型数据占用内存大小的叙述中正确的是(   )[2分]
+
+ A根据数据的大小来决定所占内存的字节数
+
+ B由用户自己定义
+
+ C由C语言编译系统决定
+
+ D均占4个字节
+
+我的答案：C
+
+8.若变量已正确定义，有以下程序段
+i=0;
+do
+{
+    printf("%d,",i);
+}while(i++); //当测试条件为0是终止
+printf("%d\n",i);
+其输出结果是(   )[2分]
+
+ A 1，1
+
+ B 程序进入无限循环
+
+ C 0，0 
+
+ D 0，1
+
+我的答案：D
+
+9.有以下计算公式
+　　
+若程序前面已在命令中包含math.h文件，不能够正确计算上述公式的程序段是(   )[2分]
+
+ A y=sqrt(x>=0?x:-x);
+
+ B if(x>=0) y=sqrt(x); else y=sqrt(-x);
+
+ Cy=sqrt(x)if(x<0) y=sqrt(-x);
+
+ D if(x>=0)y=sqrt(x); if(x<0)y=sqrt(-x);
+
+我的答案：C
+
+10.设有条件表达式：(EXP)?i++;j--，则以下表达式中(EXP)完全等价的是(   )[2分]
+
+ A（EXP!=1）
+
+ B（EXP==0）
+
+ C（EXP!=0）
+
+ D（EXP==1）
+
+我的答案：C
+
+11.有以下程序
+#include<stdio.h>
+int main(void)
+{
+   int y=9;
+   for( ; y>0;y--)
+   {
+     if(y%3= =0)
+        printf("%d",--y);
+   }
+}
+程序的运行结果是(   )[2分]
+
+ A963
+
+ B852
+
+ C875421
+
+ D741
+
+我的答案：B
+
+12.若函数调用时的实参为变量时，以下关于函数形参和实参的叙述中正确的是(   )[2分]
+
+ A同名的实参和形参占同一存储单元
+
+ B函数的形参和实参分别占用不同的存储单元
+
+ C函数的实参和其对应的形参共占同一存储单元
+
+ D形参只是形式上的存在，不占用具体存储单元
+
+我的答案：B
+
+13.已知字符’A’的ASCⅡ代码值是65，字符变量c1的值是’A’,c2的值是’D’。执行语句printf("%d,%d",c1,c2-2);后，输出结果是(   )[2分]
+
+ AA，B 
+
+ BA，68
+
+ C65，66
+
+ D65，68
+
+我的答案：C
+
+14.以下叙述中错误的是(   )[2分]
+
+ A 函数可以返回地址值
+
+ B 可以给指针变量赋一个整数作为地址值
+
+ C 当在程序的开头包含文件stdio.h时，可以给指针变量赋NULL
+
+ D 改变函数形参的值，不会改变对应实参的值
+
+我的答案：B
+
+15.以下正确的字符串常量是(   )[2分]
+
+ A" "
+
+ B"\\\"  
+
+ C'abc'
+
+ DOlympic Games
+
+我的答案：A
+
+16.设有定义：char p[]={’1’,’2’,’3’},*q=p; ,以下不能计算出一个char型数据所占字节数的表达式是(   )[2分]
+
+ A sizeof(p[0])
+
+ B sizeof(p) //数组占用的空间
+
+ C sizeof(char) 
+
+ D sizeof(*q) //char类型的变量的大小
+
+我的答案：B
+
+17.有以下函数
+int  func(char *s)
+{
+    char *t=s;       
+    while(*t++); //当测试条件为0时，即为false时，退出循环
+    t--;
+    return(t-s);//最后一个元素的地址减去首元素地址得到数组元素的个数
+}
+以下关于func函数的功能叙述正确的是(   )[2分]
+
+ A求字符串s所占字节数
+
+ B求字符串s的长度
+
+ C比较两个串的大小
+
+ D将串s复制到串t
+
+我的答案：B
+
+18.若有定义语句：int a[3][6]; ，按在内存中的存放顺序，a数组的第10个元素是(   )[2分]
+
+ Aa[1][3] 
+
+ Ba[0][3]
+
+ Ca[1][4]
+
+ Da[0][4]
+
+我的答案：A
+
+19.有以下程序
+
+#include<stdio.h>
+void fun(char **p)
+{
+    ++p;
+    printf("%s\n",*p);
+}
+int main(void)
+{
+    char *a[ ]={"Morning","Afternoon","Evening","Night"};
+    fun(a);
+}
+程序的运行结果是(  )[2分]
+
+ Afternoon
+
+ BMorning
+
+ C orning
+
+ DAfternoon
+
+我的答案：D
+
+20.若有定义语句：int a[2][3],*p[3]; ，则以下语句中正确的是(   )[2分]
+
+ A p[0]=a;
+
+ B p[0]=&a[1][2]; 
+
+ C p[1]=&a;
+
+ D p=a;
+
+我的答案：D
+
+21.有以下程序
+
+#include<stdio.h>
+int  fun(char s[ ])
+{
+    int n=0;
+    while(*s<=’9’&&*s>=’0’)
+    {
+       n=10*n+*s-’0’;
+       s++;
+    }
+    return(n);
+}
+int main(void)
+{
+    char s[10]={’6’,’1’,’*’,’4’,’*’,’9’,’*’,’0’,’*’};
+    printf("%d\n",fun(s));
+}
+程序运行的结果是(   )[2分]
+
+ A61
+
+ B5
+
+ C9
+
+ D61490
+
+我的答案：A
+
+22.以下能正确定义一维数组的选项是(   )[2分]
+
+ A char a[ ]={0,1,2,3,4,5};
+
+ B char a={’A’,’B’,’C’}; //char a[]={'A','B','C'};
+
+ C int a[5]="0123"; //char a[5]="0123";
+
+ D int a[5]={0,1,2,3,4,5}; //超出数组的存储空间
+
+我的答案：A
+
+23.以下叙述中正确的是(   ) [2分]
+
+ A宏替换不占用程序的运行时间
+
+ B预处理命令行必须位于源文件的开头
+
+ C在源文件的一行上可以有多条预处理命令
+
+ D宏名必须用大写字母表示
+
+我的答案：C
+
+24.若有以下说明和定义(   ) 
+
+union dt 
+{
+   int a;
+   char b;
+   double c;
+}data; 
+以下叙述中错误的是[2分]
+
+ A data可以作为函数的实参
+
+ B data的每个成员起始地址都相同
+
+ C 变量data所占的内存字节数与成员c所占字节数相等
+
+ D程序段:data.a=5;printf("%f\n",data.c);输出结果为5.000000 //输出结果为0.000000
+
+我的答案：D
+
+25.以下语句或语句组中,能正确进行字符串赋值的是 (  ) [2分]
+
+ A char s[10];s="right!"; 
+
+ B char s[10];*s="right!";
+
+ C char *sp="right!"; 
+
+ D char *sp;*sp="right!";
+
+我的答案：C
+
+二 填空题1.以下程序的功能是:输出a、b、c三个变量中的最小值.请填空。
+
+#include<stido.h>
+int  main(void)
+{
+    int a,b,c,t1,t2;
+    scanf("%d%d%d",&a,&b,&c);
+    t1=a<b?a:b                          
+    t2=c<t1?c:t1                          
+    printf("%d\n",t2);
+}[每空2分]
+2.以下程序的输出结果是 54321 .                       
+#include  <stdio.h> //n<m,n%m=n;
+int  main(void)
+{
+   int  n=12345, d;  
+   while(n!=0)
+   {
+      d=n%10;
+      printf("%d",d);
+      n/=10;
+   }
+}[每空4分]
+3.已有定义如下：
+struct node
+{
+int data;
+struct node *next;
+} *p;
+以下语句调用malloc函数，使指针p指向一个具有struct node类型的动态存储空间。
+p = (struct node *)malloc(  );[每空4分]
+4.表达式(int)((double)5/2+2.5)的值是：5   [每空4分]
+5.写出以下两段程序的执行结果。如果程序无法编译，请指出出错部分并写明原因；如果程序陷入死循环，请回答“死循环”。 如果执行结果出现内存错误，请指出出错部分并写明原因。
+int  main(void)
+{
+   char s[ ]="man";
+   int i;
+   for(i=0;s[ i ];i++)
+     printf("\n%c%c%c%c",s[ i ], *(s+i), *(i+s), i[s]);
+}
+  mmmm,aaaa,nnnn //对于for循环，测试语句（即条件语句）为非0时执行循环体，对于一个内容为字符串的数组，截止位(\0)时为false
+int  main(void)
+{
+   char *cptr,c;
+   void *vptr,v;
+   c=10;  v=0;
+   cptr=&c; 
+   vptr=&v;
+   printf("%c%v", c, v);
+}
+
+程序无法编译，无法输出void类型的变量
+
+  [每空2分]
+6.对下面程序段进行解释：
+typedef void (*lpFunction)(void);  //自定义一个无返回值且无参数传递的函数指针函数
+lpFunction lpReset = (lpFunction)0xF000FFF0; //声明一个lpFunction类型的函数lpReset并将(lpFunction)0xF000FFF0的结果赋值给lpReset
+lpReset(); //调用lpReset函数
+  
+  
+  
+  [每空1分]
+7.
+指出下面代码的不妥之处（不需要修改）：
+void GetMemory(T_S8 *p, T_S16 nNum)
+{
+   p = (T_S8 *)malloc(sizeof(T_S8) * nNum);
+}
+void Test(void)
+{
+   T_S8 *str = NULL;
+   GetMemory(str, 100);
+   strcpy(str, "hello");
+}
+	malloc分配的地址没有返回
+    [每空4分]
+8.Test函数的运行结果如何？原因？
+char *GetMemory(void)
+{
+   char p[] = "hello world";
+   return p;
+}
+void Test(void)
+{
+   char *str = NULL;
+   str = GetMemory();
+   printf(str);
+}
+
+结果：不确定的输出结果，GetMemory运行结束，释放了p[]的空间
+  [每空4分]
+9.Test函数的运行结果如何？原因？
+Void GetMemory2(char **p, int num)
+{
+   *p = (char *)malloc(num);
+}
+void Test(void)
+{
+   char *str = NULL;
+   GetMemory(&str, 100); //传入str本身的地址，调用函数后str的地址被修改为malloc分配的地址，不调用free是不会被释放的，所以能够返回分配好的地址
+   strcpy(str, "hello");
+   printf(str);
+}
+结果：hello
+  [每空4分]
+10.Test函数的运行结果如何？原因？
+void Test(void)
+{
+   char *str = (char *) malloc(100); //str保存了malloc分配的空间的地址，str本身保存在栈中，free只释放malloc分配的空间，str的空间在程序运行结束后才释放，所以是指针常量，不为空
+   strcpy(str, “hello”);
+   free(str);
+   if(str != NULL)
+   {
+      strcpy(str, “world”);
+      printf(str);
+   }
+}
+  [每空4分]
+三 编程题1.请编写一个函数func, 用来删除字符串中的所有空格。
+例如, 输入asd  af  aa  z67, 则输出为 asdafaaz67。[10分]
+
+
+
+
+============ 本试卷共计36题，此处为结束标志。examcoo ============●检查●临时保存●交卷上午好    
