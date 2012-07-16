@@ -25,7 +25,7 @@ void init_list(sqlink *p)
 		printf("malloc Error\n");
 		exit(1);
 	}
-	p->last=-1;	 //clearlist
+	(*p)->last = -1;	 //clearlist
 
 }
 
@@ -36,7 +36,7 @@ bool is_full(sqlink L)
 
 bool is_empty(sqlink L)
 {
-	return L->last=-1;
+	return L->last==-1;
 }
 bool add_to_list(sqlink p,datatype x)
 {
@@ -44,50 +44,49 @@ bool add_to_list(sqlink p,datatype x)
 	{
 		return false;
 	}
-
-	int i = p->last;
-
-	while(i<0)
-	{
-		 p->data[++p->last]=x;
-		 i--;
-	}
-	p->last++;
+	p->data[++p->last]=x;
 	return true;
 }
 
-void delete_from_list(sqlink L,datatype x)
+bool delete_from_list(sqlink L,datatype x)
 {
 	int i;
 	int j;
 
 	if (is_empty(L))
 	{
-		printf("the list is empty:\n");
+		printf("Error:the list is empty:\n");
+		return false;
 	}
-	for (i = 0;i<L->last;i++)
+	for (i = 0;i<=L->last;i++)
 	{
 		if (L->data[i]==x)
 		{
-			for (j = i;j<=L->last; j++)			
+			for (j = i+1;j<=L->last; j++)			
 			{
-				L->data[j+1]=L->data[j];
+				L->data[j-1]=L->data[j];
 			}
+			L->last--;
 		}
 		else
 			continue;
 	}
-	L->last--;
+
+	return true;
 }
 void show(sqlink L)
 {
+	if (is_empty(L))
+	{
+		printf("the sqlink is empty\n");
+	}
 	int i;
-	for(i=0;i<L->last;i++)
-		printf("%d\n", L->data[i]);
+	for(i=0;i<=L->last;i++)
+		printf("%d\t", L->data[i]);
+	printf("\n");
 }
 int main(void)
 {
-	int i;
 	int ret;
 	datatype n;
 	sqlink L;
@@ -100,52 +99,29 @@ int main(void)
 
 		ret=scanf("%d",&n);
 
-		while ((ret != 1) && (getchar() != '\n') )
-		{
-
-		printf("Error:  please into again:\n");
-
-		while( getchar() !='\n' )
-
-			ret=scanf("%d",&n);
-		}
-
+		if(ret ==-1)
+			break;
 
 		if ( n>=0 )
 		{
-			for (i = 0; i < L->last; i++)
+			if(add_to_list(L,n))
 			{
-				if (  L->data[i]  == n )
-				{
-					printf("the num   is in the list .... Nothing be changed:\n");
-					break;
-				}
-				else
-				{
 
-					printf("the num   is not in the list ....will be add_to_list:\n");
-
-					add_to_list(L,n);
-					show(L);
-				}
-			}	
+				show(L);
+				continue;
+			}
+			else
+				printf("add to list failed\n");
 		}
 		else
 		{
-			for (i = 0; i < L->last; i++)
+			if (delete_from_list(L,-n))
 			{
-				if ( L->data[i] == -n )
-				{
-					printf("num of %d is found in the list ,will be deleted\n", -n);
-					delete_from_list(L,-n);
-					show(L);
-				}
-				else
-				{
-					printf("num of %d is no found in the list ,nothing happened\n",-n );
-				}
-
+				show(L);
+				continue;
 			}
+			else
+				printf("delete delete_from_list failed\n");
 		}
 
 	}
