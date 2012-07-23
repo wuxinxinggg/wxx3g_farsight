@@ -1,0 +1,7 @@
+{
+	"color_scheme": "Packages/Color Scheme - Default/Slush & Poppies.tmTheme",
+	"ignored_packages":[],
+	"theme": "Soda Light.sublime-theme",
+	"vintage_start_in_command_mode":true,//let sublime text start with vi mode
+	"vintage_ctrl_keys":true	
+}
