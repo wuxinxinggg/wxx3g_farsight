@@ -1,4 +1,0 @@
-Hi,I am freopen("out.txt","w+",stdout)
-m = 30
-n = 10
-m+n = 40
