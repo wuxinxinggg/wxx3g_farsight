@@ -2,12 +2,10 @@
 
 int main(void)
 {
-	typedef unsigned int word;
-	typedef unsigned char byte;
+	int word = 0x12345678;	
 
-	word val_32 = 0x12345678;
-	byte val_8 = *((byte *)&val_32);
-
-	printf("%x\n",val_8);
+	//printf("%x",*(char *(&word)));
+	printf("%x\n",*((char *)(&word)));
+	
 	return 0;
 }
