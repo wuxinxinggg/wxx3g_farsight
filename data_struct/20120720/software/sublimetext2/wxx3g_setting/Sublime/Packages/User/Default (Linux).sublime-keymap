@@ -1,7 +1,0 @@
-[
-	{ "keys": ["ctrl+i"], "command": "toggle_side_bar" },
-	{ "keys": ["ctrl+shift+f"], "command": "show_panel", "args": {"panel": "find"} },
-	{ "keys": ["Alt+w"], "command": "close" },
-	{ "keys": ["n","n"], "command": "advanced_new_file"},
-	{ "keys": ["Alt+q"], "command": "exit" }
-]

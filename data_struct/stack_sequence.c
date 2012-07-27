@@ -1,11 +1,12 @@
 #include <stdio.h>
+#include <unistd.h>
 #include <stdlib.h>
 #include <stdbool.h>
 
 
 #define MAX 128
 
-//number will be pushed,alphabet will be poped
+//number larger than zero will be pushed and the less one will be pop...alphabet will exit... 
 
 typedef int datatype;
 typedef struct 
@@ -86,13 +87,15 @@ int main(void)
 	while(1)
 	{
 		printf("************************************************************************************\n\n\n");
-		printf("please input something to control\
-			numbers will be pulled\n,and alphabet will be poped\n");	
+		printf("please input something to control:numbers larger than zero will be pulled\n\t\t\t\t and less will be poped,alphabet will exit\n\n");	
 		printf("************************************************************************************\n\n");
 
 		ret = scanf("%d",&n);
 
-		if(ret == 1)
+		if(ret != 1)
+			break;
+
+		else if(n >= 0)
 		{
 			if(! push(stack,n))
 			{
@@ -105,7 +108,8 @@ int main(void)
 				continue;
 			}
 		}
-		else if(ret == -1)
+
+		else if(n < 0)
 		{
 			if(!pop(stack,&loc))
 			{
